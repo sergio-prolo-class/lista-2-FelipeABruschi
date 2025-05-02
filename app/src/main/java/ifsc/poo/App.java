@@ -20,7 +20,7 @@ public class App {
     public static void main(String[] args){
         App app = new App();
 
-        Grade tabuleiro = new Grade();
+        Grade tabuleiro = new Grade(600, 150);
         tabuleiro.desenhar(app.draw);
         app.draw.show();
     }
