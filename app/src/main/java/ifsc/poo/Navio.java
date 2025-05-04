@@ -1,7 +1,6 @@
 package ifsc.poo;
 
 import edu.princeton.cs.algs4.Draw;
-
 import java.awt.*;
 
 public class Navio {
@@ -10,12 +9,14 @@ public class Navio {
     private int linha;
     private int coluna;
     private char orientacao;
+    private Grade tabuleiro;
 
-    public Navio(int tamanho, int linha, int coluna, char orientacao){
+    public Navio(int tamanho, int linha, int coluna, char orientacao, Grade tabuleiro){
         this.tamanho = tamanho;
         this.linha = linha;
         this.coluna = coluna;
         this.orientacao = orientacao;
+        this.tabuleiro = tabuleiro;
     }
 
     public void desenhar(Draw tabuleiro) {

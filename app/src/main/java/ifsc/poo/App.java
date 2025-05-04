@@ -20,11 +20,19 @@ public class App {
     public static void main(String[] args){
         App app = new App();
 
-        Grade tabuleiro = new Grade(120, 120);
-        tabuleiro.desenhar(app.draw);
+        Grade tabuleiro1 = new Grade(120, 120);
+        tabuleiro1.desenhar(app.draw);
 
-        Navio navio1 = new Navio(5, 2, 3, 'v');
+        Navio navio1 = new Navio(5, 2, 3, 'v', tabuleiro1);
         navio1.desenhar(app.draw);
+        Navio navio2 = new Navio(2, 8, 1, 'h', tabuleiro1);
+        navio2.desenhar(app.draw);
+        Navio navio3 = new Navio(4, 0, 0, 'h', tabuleiro1);
+        navio3.desenhar(app.draw);
+        Navio navio4 = new Navio(3, 1, 5, 'v', tabuleiro1);
+        navio4.desenhar(app.draw);
+        Navio navio5 = new Navio(3, 5, 7, 'v', tabuleiro1);
+        navio5.desenhar(app.draw);
         app.draw.show();
     }
 }
