@@ -3,12 +3,44 @@
  */
 package ifsc.poo;
 
+import edu.princeton.cs.algs4.Draw;
+import javax.swing.*;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    Draw draw;
+
+    public App(){
+        // Define uma janela com suas dimensões e sua escala na horizontal e na vertical.
+        this.draw = new Draw();
+        this.draw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.draw.setCanvasSize(1000, 600);
+        this.draw.setXscale(0, 1000);
+        this.draw.setYscale(0, 600);
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args){
+        App app = new App();
+
+        // Cria dois tabuleiros usando a classe Grade
+        Grade tabuleiro1 = new Grade(100, 100);
+        tabuleiro1.desenhar(app.draw);
+
+        Grade tabuleiro2 = new Grade(550, 100);
+        tabuleiro2.desenhar(app.draw);
+
+        // Cria 5 navios e insere no tabuleiro 1
+        Navio navio1 = new Navio(5, 2, 3, 'v', tabuleiro1);
+        navio1.desenhar(app.draw);
+        Navio navio2 = new Navio(2, 8, 1, 'h', tabuleiro1);
+        navio2.desenhar(app.draw);
+        Navio navio3 = new Navio(4, 0, 0, 'h', tabuleiro1);
+        navio3.desenhar(app.draw);
+        Navio navio4 = new Navio(3, 1, 5, 'v', tabuleiro1);
+        navio4.desenhar(app.draw);
+        Navio navio5 = new Navio(3, 5, 7, 'v', tabuleiro1);
+        navio5.desenhar(app.draw);
+        // Mostra a janela com os dois tabuleiros, um com os navios e o outro vazio
+        app.draw.show();
     }
 }
