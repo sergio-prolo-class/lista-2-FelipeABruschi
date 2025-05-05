@@ -20,8 +20,11 @@ public class App {
     public static void main(String[] args){
         App app = new App();
 
-        Grade tabuleiro1 = new Grade(120, 120);
+        Grade tabuleiro1 = new Grade(100, 100);
         tabuleiro1.desenhar(app.draw);
+
+        Grade tabuleiro2 = new Grade(550, 100);
+        tabuleiro2.desenhar(app.draw);
 
         Navio navio1 = new Navio(5, 2, 3, 'v', tabuleiro1);
         navio1.desenhar(app.draw);

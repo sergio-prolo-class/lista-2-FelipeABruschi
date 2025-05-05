@@ -25,12 +25,12 @@ public class Navio {
             tabuleiro.setPenColor(Color.MAGENTA);
             int x, y;
             if(this.orientacao == 'h'){
-                x = 120 + (this.coluna + i) * 40;
-                y = 120 + this.linha * 40;
+                x = this.tabuleiro.lado + (this.coluna + i) * 40;
+                y = this.tabuleiro.altura + this.linha * 40;
             }
             else{
-                x = 120 + this.coluna * 40;
-                y = 120 + (this.linha + i) * 40;
+                x = this.tabuleiro.lado + this.coluna * 40;
+                y = this.tabuleiro.altura + (this.linha + i) * 40;
             }
 
             tabuleiro.filledSquare(x, y, 20);
